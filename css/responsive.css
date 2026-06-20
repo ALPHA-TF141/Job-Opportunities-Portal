@@ -1,0 +1,25 @@
+@media(max-width:1024px) {
+
+    #jobsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #jobsContainer {
+        grid-template-columns: 1fr;
+    }
+
+}
