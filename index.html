@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Opportunities Portal</title>
+    <meta name="description"
+        content="Discover your next career opportunity on our Job Portal. Search, filter, and apply to jobs from top companies.">
+    <meta name="keywords" content="jobs, opportunities, employment, career">
+    <meta name="author" content="Job Portal">
+    <title>JobPortal - Find Your Dream Job</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -12,55 +16,99 @@
 
 <body>
 
+    <!-- Navigation Header -->
     <header>
         <nav class="navbar">
-
-            <h2>Job Portal</h2>
-
-            <div class="controls">
-
-                <input type="text" id="searchInput" placeholder="Search Jobs..." aria-label="Search Jobs">
-
-                <select id="locationFilter" aria-label="Filter by Location">
-                    <option value="">All Locations</option>
-                </select>
-
-                <select id="companyFilter" aria-label="Filter by Company">
-                    <option value="">All Companies</option>
-                </select>
-
-                <button id="darkModeBtn" aria-label="Toggle Dark Mode">
-                    🌙
-                </button>
-
+            <div class="navbar-brand">
+                <span class="logo-icon">💼</span>
+                <h1>JobPortal</h1>
+                <p class="tagline">Find Your Dream Job</p>
             </div>
 
+            <div class="controls">
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Search job titles, skills..." aria-label="Search Jobs">
+                </div>
+
+                <select id="locationFilter" aria-label="Filter by Location" class="filter-select">
+                    <option value="">📍 All Locations</option>
+                </select>
+
+                <select id="companyFilter" aria-label="Filter by Company" class="filter-select">
+                    <option value="">🏢 All Companies</option>
+                </select>
+
+                <button id="darkModeBtn" aria-label="Toggle Dark Mode" class="theme-toggle">
+                    🌙 Dark
+                </button>
+            </div>
         </nav>
     </header>
 
     <main>
-
-        <section id="jobsContainer">
-
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <h3>Total Jobs</h3>
+                <p id="totalJobsCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Unique Companies</h3>
+                <p id="totalCompaniesCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Locations</h3>
+                <p id="totalLocationsCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Saved Jobs</h3>
+                <p id="savedJobsCount">0</p>
+            </div>
         </section>
 
-        <div id="pagination">
+        <!-- Filter Summary -->
+        <section class="filter-summary" id="filterSummary" style="display: none;">
+            <p id="resultText">Showing results...</p>
+            <button id="clearFiltersBtn" class="clear-btn">Clear Filters</button>
+        </section>
 
-            <button id="prevBtn">
-                Previous
+        <!-- Jobs Container -->
+        <section id="jobsContainer" class="jobs-container">
+            <!-- Jobs will be populated here -->
+        </section>
+
+        <!-- Pagination -->
+        <div id="pagination" class="pagination">
+            <button id="prevBtn" class="pagination-btn" aria-label="Previous Page">
+                ← Previous
             </button>
 
-            <span id="pageNumber">
-                1
-            </span>
+            <div class="page-info">
+                <span id="pageNumber">1</span>
+                <span>of</span>
+                <span id="totalPages">1</span>
+            </div>
 
-            <button id="nextBtn">
-                Next
+            <button id="nextBtn" class="pagination-btn" aria-label="Next Page">
+                Next →
             </button>
-
         </div>
 
     </main>
+
+    <!-- Job Detail Modal -->
+    <div id="jobModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div id="modalBody" class="modal-body">
+                <!-- Job details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
 
     <script src="js/app.js"></script>
 
