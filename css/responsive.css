@@ -1,25 +1,356 @@
-@media(max-width:1024px) {
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
 
-    #jobsContainer {
-        grid-template-columns: repeat(2, 1fr);
+/* Large Tablets & Small Desktops */
+@media (max-width: 1024px) {
+    main {
+        padding: 0 1.5rem;
     }
-
-}
-
-@media(max-width:768px) {
 
     .navbar {
-        flex-direction: column;
-        gap: 15px;
+        padding: 1.25rem 1.5rem;
     }
 
-    .controls {
+    .navbar-brand h1 {
+        font-size: 1.5rem;
+    }
+
+    .jobs-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .navbar {
         flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .navbar-brand {
         width: 100%;
     }
 
-    #jobsContainer {
+    .navbar-brand h1 {
+        font-size: 1.35rem;
+    }
+
+    .controls {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .search-wrapper {
+        min-width: unset;
+    }
+
+    .search-wrapper input {
+        width: 100%;
+    }
+
+    .filter-select {
+        width: 100%;
+    }
+
+    .theme-toggle {
+        width: 100%;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    .jobs-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+
+    .stat-card {
+        padding: 1.25rem;
+    }
+
+    .stat-card p {
+        font-size: 2rem;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 1.5rem auto;
+    }
+
+    .filter-summary {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    #resultText {
+        order: 1;
+    }
+
+    .clear-btn {
+        width: 100%;
+        order: 2;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .pagination-btn {
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .modal-body h2 {
+        font-size: 1.35rem;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions .btn {
+        width: 100%;
+    }
+
+    .toast {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .navbar {
+        padding: 0.75rem 1rem;
+    }
+
+    .navbar-brand {
+        gap: 0.5rem;
+    }
+
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+
+    .navbar-brand h1 {
+        font-size: 1.15rem;
+    }
+
+    .tagline {
+        display: none;
+    }
+
+    .controls {
+        gap: 0.5rem;
+    }
+
+    input[type="text"],
+    select,
+    .btn {
+        padding: 0.65rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .search-icon {
+        left: 0.5rem;
+    }
+
+    .search-wrapper input {
+        padding-left: 2rem;
+    }
+
+    main {
+        padding: 0 0.75rem;
+    }
+
+    .stats-section {
+        margin: 1rem auto;
+        gap: 0.75rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .stat-card h3 {
+        font-size: 0.8rem;
+    }
+
+    .stat-card p {
+        font-size: 1.75rem;
+    }
+
+    .jobs-container {
+        gap: 1rem;
+        padding: 0.75rem 0;
+    }
+
+    .job-card {
+        border-radius: 0.5rem;
+    }
+
+    .job-header {
+        padding: 1rem;
+    }
+
+    .job-title {
+        font-size: 1.1rem;
+    }
+
+    .job-body {
+        padding: 1rem;
+    }
+
+    .job-meta {
+        gap: 0.5rem;
+    }
+
+    .meta-item {
+        font-size: 0.85rem;
+    }
+
+    .job-description {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .job-footer {
+        gap: 0.5rem;
+    }
+
+    .btn {
+        padding: 0.65rem;
+        font-size: 0.85rem;
+    }
+
+    .pagination {
+        gap: 0.75rem;
+        margin: 1.5rem 0;
+        padding: 1rem;
+    }
+
+    .pagination-btn {
+        min-width: 90px;
+        padding: 0.65rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .page-info {
+        gap: 0.25rem;
+        font-size: 0.9rem;
+    }
+
+    .page-info span:first-child {
+        font-size: 1.1rem;
+    }
+
+    .filter-summary {
+        padding: 0.75rem 1rem;
+    }
+
+    #resultText {
+        font-size: 0.9rem;
+    }
+
+    .clear-btn {
+        padding: 0.65rem;
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        padding: 1.25rem;
+        max-height: 90vh;
+    }
+
+    .modal-close {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.5rem;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .modal-body h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .modal-body p {
+        font-size: 0.9rem;
+    }
+
+    .modal-body {
+        display: grid;
         grid-template-columns: 1fr;
     }
 
+    .toast {
+        padding: 0.85rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .empty-state {
+        padding: 2rem 1rem;
+    }
+
+    .empty-state-icon {
+        font-size: 2.5rem;
+    }
+
+    .empty-state h3 {
+        font-size: 1.2rem;
+    }
+
+    .empty-state p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Phones */
+@media (max-width: 360px) {
+    .navbar-brand h1 {
+        font-size: 1rem;
+    }
+
+    .job-title {
+        font-size: 1rem;
+    }
+
+    .pagination {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .pagination-btn {
+        width: 100%;
+    }
+
+    .page-info {
+        width: 100%;
+        justify-content: center;
+    }
 }
